@@ -1,30 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Dashboard - Ace Admin</title>
+		<title>Dashboard - Academis</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(css) ?>/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="<?php echo base_url(css) ?>/fonts.googleapis.com.css" />
 
 		<!-- ace styles -->
-		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace-skins.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace-rtl.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -33,7 +32,7 @@
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
-		<script src="assets/js/ace-extra.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/ace-extra.min.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -81,7 +80,7 @@
 
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
-										
+
 									</ul>
 								</li>
 
@@ -108,7 +107,7 @@
 
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
-										
+
 									</ul>
 								</li>
 
@@ -135,7 +134,7 @@
 
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
-										
+
 									</ul>
 								</li>
 
@@ -150,7 +149,7 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/images/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="<?php echo base_url(img) ?>/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -437,7 +436,7 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="assets/js/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/jquery-2.1.4.min.js"></script>
 
 		<!-- <![endif]-->
 
@@ -445,26 +444,26 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+			if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url(js) ?>/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
-		<script src="assets/js/jquery-ui.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.easypiechart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.index.min.js"></script>
-		<script src="assets/js/jquery.flot.min.js"></script>
-		<script src="assets/js/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/jquery.flot.resize.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/jquery-ui.custom.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/jquery.ui.touch-punch.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/jquery.easypiechart.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/jquery.sparkline.index.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/jquery.flot.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/jquery.flot.pie.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/js/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/ace-elements.min.js"></script>
+		<script src="<?php echo base_url(js) ?>/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
@@ -484,7 +483,7 @@
 						size: size
 					});
 				})
-			
+
 				$('.sparkline').each(function(){
 					var $box = $(this).closest('.infobox');
 					var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
@@ -496,12 +495,12 @@
 										chartRangeMin:$(this).data('min') || 0
 									 });
 				});
-			
-			
+
+
 			  //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
 			  //but sometimes it brings up errors with normal resize event handlers
 			  $.resize.throttleWindow = false;
-			
+
 			  var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
 			  var data = [
 				{ label: "social networks",  data: 38.7, color: "#68BC31"},
@@ -528,7 +527,7 @@
 					},
 					legend: {
 						show: true,
-						position: position || "ne", 
+						position: position || "ne",
 						labelBoxBorderColor: null,
 						margin:[-30,15]
 					}
@@ -540,19 +539,19 @@
 				 })
 			 }
 			 drawPieChart(placeholder, data);
-			
+
 			 /**
 			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
 			 so that's not needed actually.
 			 */
 			 placeholder.data('chart', data);
 			 placeholder.data('draw', drawPieChart);
-			
-			
+
+
 			  //pie chart tooltip example
 			  var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
 			  var previousPoint = null;
-			
+
 			  placeholder.on('plothover', function (event, pos, item) {
 				if(item) {
 					if (previousPoint != item.seriesIndex) {
@@ -565,33 +564,33 @@
 					$tooltip.hide();
 					previousPoint = null;
 				}
-				
+
 			 });
-			
+
 				/////////////////////////////////////
 				$(document).one('ajaxloadstart.page', function(e) {
 					$tooltip.remove();
 				});
-			
-			
-			
-			
+
+
+
+
 				var d1 = [];
 				for (var i = 0; i < Math.PI * 2; i += 0.5) {
 					d1.push([i, Math.sin(i)]);
 				}
-			
+
 				var d2 = [];
 				for (var i = 0; i < Math.PI * 2; i += 0.5) {
 					d2.push([i, Math.cos(i)]);
 				}
-			
+
 				var d3 = [];
 				for (var i = 0; i < Math.PI * 2; i += 0.2) {
 					d3.push([i, Math.tan(i)]);
 				}
-				
-			
+
+
 				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
 				$.plot("#sales-charts", [
 					{ label: "Domains", data: d1 },
@@ -619,28 +618,28 @@
 						borderColor:'#555'
 					}
 				});
-			
-			
+
+
 				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 				function tooltip_placement(context, source) {
 					var $source = $(source);
 					var $parent = $source.closest('.tab-content')
 					var off1 = $parent.offset();
 					var w1 = $parent.width();
-			
+
 					var off2 = $source.offset();
 					//var w2 = $source.width();
-			
+
 					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 					return 'left';
 				}
-			
-			
+
+
 				$('.dialogs,.comments').ace_scroll({
 					size: 300
 			    });
-				
-				
+
+
 				//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
 				//so disable dragging when clicking on label
 				var agent = navigator.userAgent.toLowerCase();
@@ -652,7 +651,7 @@
 					if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
 				  });
 				}
-			
+
 				$('#tasks').sortable({
 					opacity:0.8,
 					revert:true,
@@ -671,18 +670,18 @@
 					if(this.checked) $(this).closest('li').addClass('selected');
 					else $(this).closest('li').removeClass('selected');
 				});
-			
-			
+
+
 				//show the dropdowns on top or bottom depending on window height and menu position
 				$('#task-tab .dropdown-hover').on('mouseenter', function(e) {
 					var offset = $(this).offset();
-			
+
 					var $w = $(window)
-					if (offset.top > $w.scrollTop() + $w.innerHeight() - 100) 
+					if (offset.top > $w.scrollTop() + $w.innerHeight() - 100)
 						$(this).addClass('dropup');
 					else $(this).removeClass('dropup');
 				});
-			
+
 			})
 		</script>
 	</body>
