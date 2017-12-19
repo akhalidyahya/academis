@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 <h1>Masuk dulu untuk melanjutkan</h1>
 
 	 <div id="body">
-	  <?php echo form_open('welcome/ceklogin')?>
+	  <?php echo form_open('login/ceklogin')?>
 	  <input type="text" name="user" placeholder="Masukkan username"/>
 	  <input type="password" name="pass" placeholder="Masukkan password"/>
 	  <input type="submit" name="login" value="LOGIN"/>
