@@ -1,29 +1,30 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Dashboard - Academis</title>
+		<title>Dashboard - Ace Admin</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="<?php echo base_url(css) ?>/bootstrap.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- page specific plugin styles -->
 
 		<!-- text fonts -->
-		<link rel="stylesheet" href="<?php echo base_url(css) ?>/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/fonts.googleapis.com.css" />
 
 		<!-- ace styles -->
-		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
-		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace-skins.min.css" />
-		<link rel="stylesheet" href="<?php echo base_url(css) ?>/ace-rtl.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/ace-rtl.min.css" />
 
 		<!--[if lte IE 9]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -32,7 +33,7 @@
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
-		<script src="<?php echo base_url(js) ?>/ace-extra.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/ace-extra.min.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -149,7 +150,7 @@
 
 						<li class="light-blue dropdown-modal">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?php echo base_url(img) ?>/avatars/user.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="<?php echo base_url(); ?>assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -436,7 +437,7 @@
 		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
-		<script src="<?php echo base_url(js) ?>/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.4.min.js"></script>
 
 		<!-- <![endif]-->
 
@@ -444,26 +445,26 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url(js) ?>/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+			if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url(); ?>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
-		<script src="<?php echo base_url(js) ?>/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
 		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
-		<script src="<?php echo base_url(js) ?>/jquery-ui.custom.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/jquery.ui.touch-punch.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/js/jquery.easypiechart.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/js/jquery.sparkline.index.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/js/jquery.flot.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/js/jquery.flot.pie.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/js/jquery.flot.resize.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery-ui.custom.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.easypiechart.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.flot.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.flot.pie.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
-		<script src="<?php echo base_url(js) ?>/ace-elements.min.js"></script>
-		<script src="<?php echo base_url(js) ?>/ace.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/ace-elements.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
