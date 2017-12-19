@@ -5,7 +5,6 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-<<<<<<< HEAD
 		$this->load->view('welcome_message');
 	}
 
@@ -34,14 +33,9 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
-	
+
 	function keluar(){
 		$this->session->sess_destroy();
 		redirect('welcome/index');
-=======
-		$this->load->view('admin/header');
-		$this->load->view('admin/body');
-		$this->load->view('admin/footer');
->>>>>>> 8bafad762f2871df37fa10fe1f154f1fd959efef
 	}
 }
