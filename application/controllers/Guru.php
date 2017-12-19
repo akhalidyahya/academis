@@ -10,9 +10,10 @@ class Guru extends CI_Controller
     }
   }
 
-  function guru(){
-		$data["title"]="Halaman Guru";
-		$this->load->view('guru',$data);
+  function index(){
+		$this->load->view('layout/header');
+    $this->load->view('layout/bodyGuru');
+    $this->load->view('layout/footer');
 	}
 }
 ?>

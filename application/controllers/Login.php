@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Login extends CI_Controller {
 
 	public function index()
 	{
@@ -36,6 +36,6 @@ class Welcome extends CI_Controller {
 
 	function keluar(){
 		$this->session->sess_destroy();
-		redirect('welcome/index');
+		redirect('login');
 	}
 }

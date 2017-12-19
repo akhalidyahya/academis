@@ -11,8 +11,9 @@ class Admin extends CI_Controller
   }
 
   function index(){
-    $data["title"]="Halaman Beranda";
-		$this->load->view('beranda',$data);
+		$this->load->view('layout/header');
+    $this->load->view('layout/body');
+    $this->load->view('layout/footer');
   }
 }
 ?>

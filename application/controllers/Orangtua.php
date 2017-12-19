@@ -10,9 +10,10 @@ class Orangtua extends CI_Controller
     }
   }
 
-  function orangtua(){
-		$data["title"]="Halaman Orang Tua";
-		$this->load->view('orangtua',$data);
+  function index(){
+    $this->load->view('layout/header');
+    $this->load->view('layout/bodyOrtu');
+    $this->load->view('layout/footer');
 	}
 }
 ?>

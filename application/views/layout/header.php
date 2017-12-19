@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Dashboard - Ace Admin</title>
+		<title>Dashboard - Academis Admin</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -153,7 +153,7 @@
 								<img class="nav-user-photo" src="<?php echo base_url(); ?>assets/images/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>Welcome,</small>
-									Jason
+									<?php echo $this->session->userdata('username') ?>
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -177,7 +177,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="<?php echo base_url();?>index.php/login/keluar">
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>

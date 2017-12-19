@@ -10,9 +10,10 @@ class Siswa extends CI_Controller
     }
   }
 
-  function siswa(){
-    $data["title"]="Halaman Siswa";
-    $this->load->view('siswa',$data);
+  function index(){
+    $this->load->view('layout/header');
+    $this->load->view('layout/bodySiswa');
+    $this->load->view('layout/footer');
   }
 }
 ?>
