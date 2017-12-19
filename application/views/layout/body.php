@@ -40,7 +40,7 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="dashboard.html">
+						<a href="<?php echo base_url(); ?>index.php/admin">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
@@ -49,7 +49,7 @@
 					</li>
 
 					<li class="">
-						<a href="data-guru.html">
+						<a href="<?php echo base_url(); ?>index.php/admin/view_guru">
 							<i class="menu-icon fa fa-user"></i>
 							<span class="menu-text"> Data guru </span>
 						</a>
@@ -118,8 +118,6 @@
 							</li>
 							<li class="active">Dashboard</li>
 						</ul><!-- /.breadcrumb -->
-
-						<!-- CONTENT HERE -->
 
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
@@ -199,15 +197,4 @@
 							</div><!-- /.ace-settings-box -->
 						</div><!-- /.ace-settings-container -->
 
-						<div class="page-header">
-							<h1>
-								Dashboard
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									overview &amp; stats
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
-					</div><!-- /.page-content -->
-				</div>
-			</div><!-- /.main-content -->
+						<!-- CONTENT HERE -->

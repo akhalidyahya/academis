@@ -57,7 +57,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="<?php echo base_url(); ?>index.php/admin" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Aflowz Academis
