@@ -11,7 +11,7 @@ class Login extends CI_Controller {
 	function ceklogin(){
 		if (isset($_POST['login'])) {
 			$user=$this->input->post('user',true);
-			$pass=$this->input->post('pass',true);
+			$pass=md5($this->input->post('pass',true));
 			$cek=$this->sik->proseslogin($user, $pass);
 			$hasil=count($cek);
 			if ($hasil > 0) {
@@ -30,7 +30,9 @@ class Login extends CI_Controller {
 					redirect('orangtua');
 				}
 			}else {
-				redirect('login');
+				echo "<script type='text/javascript'>alert ('Maaf Username Dan Password Anda Salah !');
+							document.location='index';
+							</script>";
 			}
 		}
 	}
