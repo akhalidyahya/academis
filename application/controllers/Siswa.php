@@ -12,7 +12,7 @@ class Siswa extends CI_Controller
 
   function index(){
     $this->load->view('layout/header');
-    $this->load->view('layout/bodySiswa');
+    $this->load->view('layout/sidebar');
     $this->load->view('layout/footer');
   }
 }

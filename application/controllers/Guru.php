@@ -12,7 +12,7 @@ class Guru extends CI_Controller
 
   function index(){
 		$this->load->view('layout/header');
-    $this->load->view('layout/bodyGuru');
+    $this->load->view('layout/sidebar');
     $this->load->view('layout/footer');
 	}
 }

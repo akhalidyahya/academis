@@ -12,7 +12,7 @@ class Orangtua extends CI_Controller
 
   function index(){
     $this->load->view('layout/header');
-    $this->load->view('layout/bodyOrtu');
+    $this->load->view('layout/sidebar');
     $this->load->view('layout/footer');
 	}
 }

@@ -17,7 +17,8 @@ class Login extends CI_Controller {
 			if ($hasil > 0) {
 				$yglogin=$this->db->get_where('akun',array('username'=>$user, 'password'=>$pass))->row();
 				$data = array('udhmasuk' => true,
-					'username'=>$yglogin->username);
+					'username'=>$yglogin->username,
+					'role' => $yglogin->status);
 				$this->session->set_userdata($data);
 				if ($yglogin->status == 'admin') {
 					redirect('admin');
@@ -29,7 +30,7 @@ class Login extends CI_Controller {
 					redirect('orangtua');
 				}
 			}else {
-				redirect('index');
+				redirect('login');
 			}
 		}
 	}

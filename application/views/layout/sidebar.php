@@ -38,70 +38,192 @@
 					</div>
 				</div><!-- /.sidebar-shortcuts -->
 
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="<?php echo base_url(); ?>index.php/admin">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Dashboard </span>
-						</a>
+				<?php
+					if ($this->session->userdata('role') == 'admin') { ?>
+						<ul class="nav nav-list">
+							<li class="active">
+								<a href="<?php echo base_url(); ?>index.php/admin">
+									<i class="menu-icon fa fa-tachometer"></i>
+									<span class="menu-text"> Dashboard </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
 
-						<b class="arrow"></b>
-					</li>
+							<li class="">
+								<a href="<?php echo base_url(); ?>index.php/admin/view_guru">
+									<i class="menu-icon fa fa-user"></i>
+									<span class="menu-text"> Data guru </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
 
-					<li class="">
-						<a href="<?php echo base_url(); ?>index.php/admin/view_guru">
-							<i class="menu-icon fa fa-user"></i>
-							<span class="menu-text"> Data guru </span>
-						</a>
+							<li class="">
+								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
+									<i class="menu-icon fa fa-users"></i>
+									<span class="menu-text"> data siswa </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
 
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="data-siswa.html">
-							<i class="menu-icon fa fa-users"></i>
-							<span class="menu-text"> data siswa </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="rapot.html">
-							<i class="menu-icon fa fa-book"></i>
-							<span class="menu-text"> Rapot </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
+							<li class="">
+								<a href="rapot.html">
+									<i class="menu-icon fa fa-book"></i>
+									<span class="menu-text"> Rapot </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
 
 
-					<li class="">
-						<a href="calendar.html">
-							<i class="menu-icon fa fa-calendar"></i>
+							<li class="">
+								<a href="<?php echo base_url(); ?>index.php/admin/view_calendar">
+									<i class="menu-icon fa fa-calendar"></i>
+									<span class="menu-text">
+										Calendar
+									</span>
+								</a>
 
-							<span class="menu-text">
-								Calendar
+								<b class="arrow"></b>
+							</li>
 
-								<!--span class="badge badge-transparent tooltip-error" title="2 Important Events">
-									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-								</span-->
-							</span>
-						</a>
+							<li class="">
+								<a href="<?php echo base_url(); ?>index.php/admin/view_pengumuman">
+									<i class="menu-icon fa fa-podcast"></i>
+									<span class="menu-text"> Pengumuman </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
 
-						<b class="arrow"></b>
-					</li>
+						</ul><!-- /.nav-list -->
+					<?php }
+				 ?>
 
-					<li class="">
-						<a href="pengumuman.html">
-							<i class="menu-icon fa fa-podcast"></i>
-							<span class="menu-text"> Pengumuman </span>
-						</a>
+				 <?php
+ 					if ($this->session->userdata('role') == 'guru') { ?>
+ 						<ul class="nav nav-list">
+ 							<li class="active">
+ 								<a href="<?php echo base_url(); ?>index.php/admin">
+ 									<i class="menu-icon fa fa-tachometer"></i>
+ 									<span class="menu-text"> Dashboard </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
 
-						<b class="arrow"></b>
-					</li>
+ 							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
+ 									<i class="menu-icon fa fa-users"></i>
+ 									<span class="menu-text"> data siswa </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
 
-				</ul><!-- /.nav-list -->
+ 							<li class="">
+ 								<a href="rapot.html">
+ 									<i class="menu-icon fa fa-book"></i>
+ 									<span class="menu-text"> Rapot </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+
+ 							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_calendar">
+ 									<i class="menu-icon fa fa-calendar"></i>
+ 									<span class="menu-text">
+ 										Calendar
+ 									</span>
+ 								</a>
+
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_pengumuman">
+ 									<i class="menu-icon fa fa-podcast"></i>
+ 									<span class="menu-text"> Pengumuman </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 						</ul><!-- /.nav-list -->
+ 					<?php }
+ 				 ?>
+
+				 <?php
+ 					if ($this->session->userdata('role') == 'ortu') { ?>
+ 						<ul class="nav nav-list">
+ 							<li class="active">
+ 								<a href="<?php echo base_url(); ?>index.php/admin">
+ 									<i class="menu-icon fa fa-tachometer"></i>
+ 									<span class="menu-text"> Dashboard </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
+ 									<i class="menu-icon fa fa-users"></i>
+ 									<span class="menu-text"> data siswa </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 							<li class="">
+ 								<a href="rapot.html">
+ 									<i class="menu-icon fa fa-book"></i>
+ 									<span class="menu-text"> Rapot </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_calendar">
+ 									<i class="menu-icon fa fa-calendar"></i>
+ 									<span class="menu-text">
+ 										Calendar
+ 									</span>
+ 								</a>
+
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 						</ul><!-- /.nav-list -->
+ 					<?php }
+ 				 ?>
+
+				 <?php
+ 					if ($this->session->userdata('role') == 'siswa') { ?>
+ 						<ul class="nav nav-list">
+ 							<li class="active">
+ 								<a href="<?php echo base_url(); ?>index.php/admin">
+ 									<i class="menu-icon fa fa-tachometer"></i>
+ 									<span class="menu-text"> Dashboard </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 							<li class="">
+ 								<a href="rapot.html">
+ 									<i class="menu-icon fa fa-book"></i>
+ 									<span class="menu-text"> Rapot </span>
+ 								</a>
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 							<li class="">
+ 								<a href="<?php echo base_url(); ?>index.php/admin/view_calendar">
+ 									<i class="menu-icon fa fa-calendar"></i>
+ 									<span class="menu-text">
+ 										Calendar
+ 									</span>
+ 								</a>
+
+ 								<b class="arrow"></b>
+ 							</li>
+
+ 						</ul><!-- /.nav-list -->
+ 					<?php }
+ 				 ?>
+
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
 					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
