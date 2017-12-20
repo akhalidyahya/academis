@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 Des 2017 pada 18.10
+-- Generation Time: 20 Des 2017 pada 08.11
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -86,6 +86,13 @@ CREATE TABLE `guru` (
   `id_mapel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `guru`
+--
+
+INSERT INTO `guru` (`id_guru`, `nama_depan`, `nama_tengah`, `nama_belakang`, `alamat`, `kelurahan`, `kecamatan`, `kota`, `provinsi`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `nip`, `email`, `no_telp`, `id_kelas`, `id_mapel`) VALUES
+(3, 'Harun', 'Bedul', 'Arrosid', 'jl. haji damon rt.005/14 no.90', 'cisalak pasar', 'cimanggis', 'depok', 'jawa barat', 'L', 'bogor', '2001-01-14', '4617010016', 'bedul2414@gmail.com', '02190897656', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +117,13 @@ CREATE TABLE `kelas` (
   `nama_kelas` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
+(1, '1');
+
 -- --------------------------------------------------------
 
 --
@@ -120,6 +134,13 @@ CREATE TABLE `mata_pelajaran` (
   `id_mapel` int(11) NOT NULL,
   `nama_mapel` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `mata_pelajaran`
+--
+
+INSERT INTO `mata_pelajaran` (`id_mapel`, `nama_mapel`) VALUES
+(1, 'Tema 1');
 
 -- --------------------------------------------------------
 
@@ -288,7 +309,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
 --
@@ -298,12 +319,12 @@ ALTER TABLE `kalender_akademik`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `orang_tua`
 --
