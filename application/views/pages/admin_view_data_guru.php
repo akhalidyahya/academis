@@ -24,21 +24,34 @@
 										<td>NIP</td>
 										<td>Email</td>
 										<td>No. Telpon</td>
-										<td>action</td>
+										<td>Aksi</td>
 									</thead>
 									<tbody>
-										<td>1</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td>Data Dummy</td>
-										<td> <i class="fa fa-edit"></i> <i class="fa fa-times"></i> <i class="fa fa-book"></i> <i class="fa fa-users"></i> </td>
+										<?php
+						        	$no=0;
+						        	foreach ($sql1->result() as $obj1) {
+						        		$no++;
+						        		?>
+						        			<tr>
+						        				<td><?php echo $no; ?></td>
+						        				<td><?php echo $obj1->nama_depan; ?></td>
+						        				<td><?php echo $obj1->alamat; ?></td>
+														<td><?php echo $obj1->kelurahan; ?></td>
+														<td><?php echo $obj1->kecamatan; ?></td>
+														<td><?php echo $obj1->provinsi; ?></td>
+														<td><?php echo $obj1->jenis_kelamin; ?></td>
+														<td><?php echo $obj1->tanggal_lahir; ?></td>
+														<td><?php echo $obj1->nip; ?></td>
+														<td><?php echo $obj1->email; ?></td>
+														<td><?php echo $obj1->no_telp; ?></td>
+						        				<td>
+						        					<a href="<?php echo base_url();?>#<?php echo $obj1->id_guru;?>" class="btn btn-info btn-xs"> Edit</a>
+						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>#<?php echo $obj1->id_guru;?>';}" class="btn btn-danger btn-xs"> Hapus </a>
+						        				</td>
+						        			</tr>
+						        		<?php
+						        	}
+						        ?>
 									</tbody>
 								</table>
 								<!-- PAGE CONTENT ENDS -->
