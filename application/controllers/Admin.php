@@ -11,15 +11,17 @@ class Admin extends CI_Controller
   }
 
   function index(){
+    $data['title'] = "Dashboard";
 		$this->load->view('layout/header');
-    $this->load->view('layout/sidebar');
+    $this->load->view('layout/sidebar',$data);
     // $this->load->view('layout/dashboard');
     $this->load->view('layout/footer');
   }
 
   function view_guru(){
+    $data['title'] = "Data Guru";
     $this->load->view('layout/header');
-    $this->load->view('layout/sidebar');
+    $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_view_data_guru');
     $this->load->view('layout/footer');
   }
