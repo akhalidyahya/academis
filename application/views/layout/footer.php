@@ -28,23 +28,49 @@
   <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
 </div><!-- /.main-container -->
+<!-- ace settings handler -->
+<script src="<?php echo base_url(); ?>assets/js/ace-extra.min.js"></script>
 
+<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+<!--[if lte IE 8]>
+<script src="assets/js/html5shiv.min.js"></script>
+<script src="assets/js/respond.min.js"></script>
+<![endif]-->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.4.min.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+if('ontouchstart' in document.documentElement) document.write("<script src='<?php echo base_url(); ?>assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="assets/js/excanvas.min.js"></script>
+<![endif]-->
+<script src="<?php echo base_url(); ?>assets/js/jquery-ui.custom.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src='<?php echo base_url();?>assets/js/moment.min.js'></script>
+<script src="<?php echo base_url();?>assets/js/fullcalendar.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrapValidator.min.js"></script>
+<script src='<?php echo base_url();?>assets/js/bootstrap-colorpicker.min.js'></script>
+<!-- ace scripts -->
+<script src="<?php echo base_url(); ?>assets/js/ace-elements.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/ace.min.js"></script>
+
+<script src='<?php echo base_url();?>assets/js/main.js'></script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
 jQuery(function($) {
-
-  $('.sparkline').each(function(){
-    var $box = $(this).closest('.infobox');
-    var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
-    $(this).sparkline('html',
-             {
-              tagValuesAttribute:'data-values',
-              type: 'bar',
-              barColor: barColor ,
-              chartRangeMin:$(this).data('min') || 0
-             });
-  });
-
 
   //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
   //but sometimes it brings up errors with normal resize event handlers

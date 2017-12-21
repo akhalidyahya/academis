@@ -6,6 +6,7 @@ class Admin extends CI_Controller
   function __construct(){
     parent::__construct();
     $this->load->model('sik');
+    $this->load->model('Calendar_model');
     if ($this->session->userdata('udhmasuk')==false) {
       redirect('login');
     }
@@ -33,6 +34,14 @@ class Admin extends CI_Controller
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_add_data_guru');
+    $this->load->view('layout/footer');
+  }
+
+  function view_calendar()
+  {
+    $data['title'] = "Kalender event";
+    $this->load->view('layout/header');
+    $this->load->view('pages/admin_calendar');
     $this->load->view('layout/footer');
   }
 }
