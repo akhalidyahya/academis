@@ -7,7 +7,7 @@ class Sik extends CI_Model{
     $sql=$this->db->query("SELECT* FROM guru");
     return $sql;
   }
-  
+
   function proseslogin($user,$pass){
     $this->db->where('username',$user);
     $this->db->where('password',$pass);

@@ -34,13 +34,13 @@
 						        		?>
 						        			<tr>
 						        				<td><?php echo $no; ?></td>
-						        				<td><?php echo $obj1->nama_depan; ?></td>
+						        				<td><?php echo $obj1->nama_depan . " " . $obj1->nama_tengah . " " . $obj1->nama_belakang; ?></td>
 						        				<td><?php echo $obj1->alamat; ?></td>
 														<td><?php echo $obj1->kelurahan; ?></td>
 														<td><?php echo $obj1->kecamatan; ?></td>
 														<td><?php echo $obj1->provinsi; ?></td>
 														<td><?php echo $obj1->jenis_kelamin; ?></td>
-														<td><?php echo $obj1->tanggal_lahir; ?></td>
+														<td><?php echo $obj1->tempat_lahir . ", " .$obj1->tanggal_lahir; ?></td>
 														<td><?php echo $obj1->nip; ?></td>
 														<td><?php echo $obj1->email; ?></td>
 														<td><?php echo $obj1->no_telp; ?></td>
