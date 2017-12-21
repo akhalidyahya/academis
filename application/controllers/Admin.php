@@ -41,6 +41,7 @@ class Admin extends CI_Controller
   {
     $data['title'] = "Kalender event";
     $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_calendar');
     $this->load->view('layout/footer');
   }
