@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20 Des 2017 pada 08.11
--- Versi Server: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Dec 22, 2017 at 12:54 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `absensi`
+-- Table structure for table `absensi`
 --
 
 CREATE TABLE `absensi` (
@@ -38,7 +40,7 @@ CREATE TABLE `absensi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `akun`
+-- Table structure for table `akun`
 --
 
 CREATE TABLE `akun` (
@@ -50,7 +52,7 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `akun`
+-- Dumping data for table `akun`
 --
 
 INSERT INTO `akun` (`id_akun`, `id_user`, `username`, `password`, `status`) VALUES
@@ -63,7 +65,30 @@ INSERT INTO `akun` (`id_akun`, `id_user`, `username`, `password`, `status`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `guru`
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  `color` varchar(7) CHARACTER SET utf8 NOT NULL DEFAULT '#3a87ad',
+  `start` datetime NOT NULL,
+  `end` datetime DEFAULT NULL,
+  `allDay` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT 'true'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `description`, `color`, `start`, `end`, `allDay`) VALUES
+(0, 'Event Title', 'This is title deskription', '#3a87ad', '2017-11-26 00:00:00', '2017-11-30 00:00:00', 'true');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `guru`
 --
 
 CREATE TABLE `guru` (
@@ -87,7 +112,7 @@ CREATE TABLE `guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `guru`
+-- Dumping data for table `guru`
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_depan`, `nama_tengah`, `nama_belakang`, `alamat`, `kelurahan`, `kecamatan`, `kota`, `provinsi`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `nip`, `email`, `no_telp`, `id_kelas`, `id_mapel`) VALUES
@@ -96,7 +121,7 @@ INSERT INTO `guru` (`id_guru`, `nama_depan`, `nama_tengah`, `nama_belakang`, `al
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kalender_akademik`
+-- Table structure for table `kalender_akademik`
 --
 
 CREATE TABLE `kalender_akademik` (
@@ -109,7 +134,7 @@ CREATE TABLE `kalender_akademik` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -118,7 +143,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelas`
+-- Dumping data for table `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
@@ -127,7 +152,7 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mata_pelajaran`
+-- Table structure for table `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -136,7 +161,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mata_pelajaran`
+-- Dumping data for table `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`id_mapel`, `nama_mapel`) VALUES
@@ -145,7 +170,7 @@ INSERT INTO `mata_pelajaran` (`id_mapel`, `nama_mapel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orang_tua`
+-- Table structure for table `orang_tua`
 --
 
 CREATE TABLE `orang_tua` (
@@ -169,7 +194,7 @@ CREATE TABLE `orang_tua` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengumuman`
+-- Table structure for table `pengumuman`
 --
 
 CREATE TABLE `pengumuman` (
@@ -183,7 +208,7 @@ CREATE TABLE `pengumuman` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rapot`
+-- Table structure for table `rapot`
 --
 
 CREATE TABLE `rapot` (
@@ -196,7 +221,7 @@ CREATE TABLE `rapot` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `siswa`
+-- Table structure for table `siswa`
 --
 
 CREATE TABLE `siswa` (
@@ -300,82 +325,93 @@ ALTER TABLE `siswa`
 --
 ALTER TABLE `absensi`
   MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
   MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
 --
 ALTER TABLE `kalender_akademik`
   MODIFY `id_kaldik` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `orang_tua`
 --
 ALTER TABLE `orang_tua`
   MODIFY `id_ortu` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
   MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `rapot`
 --
 ALTER TABLE `rapot`
   MODIFY `id_rapot` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
   MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `absensi`
+-- Constraints for table `absensi`
 --
 ALTER TABLE `absensi`
   ADD CONSTRAINT `absensi_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`),
   ADD CONSTRAINT `absensi_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`);
 
 --
--- Ketidakleluasaan untuk tabel `guru`
+-- Constraints for table `guru`
 --
 ALTER TABLE `guru`
   ADD CONSTRAINT `guru_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`),
   ADD CONSTRAINT `guru_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `mata_pelajaran` (`id_mapel`);
 
 --
--- Ketidakleluasaan untuk tabel `rapot`
+-- Constraints for table `rapot`
 --
 ALTER TABLE `rapot`
   ADD CONSTRAINT `rapot_ibfk_1` FOREIGN KEY (`id_siswa`) REFERENCES `siswa` (`id_siswa`),
   ADD CONSTRAINT `rapot_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `mata_pelajaran` (`id_mapel`);
 
 --
--- Ketidakleluasaan untuk tabel `siswa`
+-- Constraints for table `siswa`
 --
 ALTER TABLE `siswa`
   ADD CONSTRAINT `siswa_ibfk_1` FOREIGN KEY (`id_ortu`) REFERENCES `orang_tua` (`id_ortu`),
   ADD CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
