@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/chosen.min.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-datepicker3.min.css" />
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
 <div class="page-content">
 						<div class="page-header">
 							<h1>
@@ -126,3 +129,15 @@
 				</div><!-- /.page-content -->
 			</div>
 		</div><!-- /.main-content -->
+		<script type="text/javascript">
+		//datepicker plugin
+		//link
+		$('.date-picker').datepicker({
+			autoclose: true,
+			todayHighlight: true
+		})
+		//show datepicker when clicking on the icon
+		.next().on(ace.click_event, function(){
+			$(this).prev().focus();
+		});
+		</script>
