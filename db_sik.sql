@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2017 at 12:54 AM
+-- Generation Time: Dec 22, 2017 at 04:55 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -107,8 +107,8 @@ CREATE TABLE `guru` (
   `nip` varchar(18) NOT NULL,
   `email` varchar(25) NOT NULL,
   `no_telp` varchar(12) NOT NULL,
-  `id_kelas` int(11) NOT NULL,
-  `id_mapel` int(11) NOT NULL
+  `id_kelas` int(11) DEFAULT NULL,
+  `id_mapel` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -116,7 +116,8 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_depan`, `nama_tengah`, `nama_belakang`, `alamat`, `kelurahan`, `kecamatan`, `kota`, `provinsi`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `nip`, `email`, `no_telp`, `id_kelas`, `id_mapel`) VALUES
-(3, 'Harun', 'Bedul', 'Arrosid', 'jl. haji damon rt.005/14 no.90', 'cisalak pasar', 'cimanggis', 'depok', 'jawa barat', 'L', 'bogor', '2001-01-14', '4617010016', 'bedul2414@gmail.com', '02190897656', 1, 1);
+(3, 'Harun', 'Bedul', 'Arrosid', 'jl. haji damon rt.005/14 no.90', 'cisalak pasar', 'cimanggis', 'depok', 'jawa barat', 'L', 'bogor', '2001-01-14', '4617010016', 'bedul2414@gmail.com', '02190897656', 1, 1),
+(6, 'Abdul', 'khld', 'yhy', 'a', 'a', 'a', 'a', 'aa', 'L', 'a', '2017-12-21', '1', 'k@k.k', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -267,8 +268,8 @@ ALTER TABLE `akun`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id_guru`),
-  ADD UNIQUE KEY `id_kelas` (`id_kelas`),
-  ADD UNIQUE KEY `id_mapel` (`id_mapel`);
+  ADD KEY `fk_guru_kelas` (`id_kelas`),
+  ADD KEY `fk_guru_mapel` (`id_mapel`);
 
 --
 -- Indexes for table `kalender_akademik`
@@ -336,7 +337,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
@@ -395,8 +396,8 @@ ALTER TABLE `absensi`
 -- Constraints for table `guru`
 --
 ALTER TABLE `guru`
-  ADD CONSTRAINT `guru_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`),
-  ADD CONSTRAINT `guru_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `mata_pelajaran` (`id_mapel`);
+  ADD CONSTRAINT `fk_guru_kelas` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`),
+  ADD CONSTRAINT `fk_guru_mapel` FOREIGN KEY (`id_mapel`) REFERENCES `mata_pelajaran` (`id_mapel`);
 
 --
 -- Constraints for table `rapot`
