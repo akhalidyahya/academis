@@ -32,7 +32,7 @@
 
 		<!-- inline styles related to this page -->
 
-		
+
 	</head>
 
 	<body class="no-skin">
