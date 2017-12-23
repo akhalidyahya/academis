@@ -31,9 +31,10 @@ class Admin extends CI_Controller
 
   function add_guru(){
     $data['title'] = "Tambah data Guru";
+    $data['op'] = 'tambah';
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
-    $this->load->view('pages/admin_add_data_guru');
+    $this->load->view('pages/admin_add_data_guru',$data);
     $this->load->view('layout/footer');
   }
 
@@ -45,5 +46,66 @@ class Admin extends CI_Controller
     $this->load->view('pages/admin_calendar');
     $this->load->view('layout/footer');
   }
+
+  public function guru_simpan()
+	{
+		$op = $this->input->post('op');
+		$id_guru = $this->input->post('id_guru');
+		$nama_depan = $this->input->post('nama_depan');
+		$nama_tengah = $this->input->post('nama_tengah');
+    $nama_belakang = $this->input->post('nama_belakang');
+    $alamat = $this->input->post('alamat');
+    $kelurahan = $this->input->post('kelurahan');
+    $kecamatan = $this->input->post('kecamatan');
+    $kota = $this->input->post('kota');
+    $provinsi = $this->input->post('provinsi');
+    $jenis_kelamin = $this->input->post('jenis_kelamin');
+    $tempat_lahir = $this->input->post('tempat_lahir');
+    $tanggal_lahir = $this->input->post('tanggal_lahir');
+    $nip = $this->input->post('nip');
+    $email = $this->input->post('email');
+    $no_telp = $this->input->post('no_telp');
+    $id_kelas = $this->input->post('id_kelas');
+    $id_mapel = $this->input->post('id_mapel');
+		$data = array(
+			'nama_depan' => $nama_depan,
+			'nama_tengah' => $nama_tengah,
+      'nama_belakang' => $nama_belakang,
+      'alamat' => $alamat,
+      'kelurahan' => $kelurahan,
+      'kecamatan' => $kecamatan,
+      'kota' => $kota,
+      'provinsi' => $provinsi,
+      'jenis_kelamin' => $jenis_kelamin,
+      'tempat_lahir' => $tempat_lahir,
+      'tanggal_lahir' => $tanggal_lahir,
+      'nip' => $nip,
+      'email' => $email,
+      'no_telp' => $no_telp,
+      'id_kelas' => $id_kelas,
+      'id_mapel' => $id_mapel
+			);
+		if ($op=="tambah") {
+			$this->sik->simpan_guru($data);
+		}else{
+			$this->sik->update_guru($id_guru,$data);
+		}
+		redirect('admin/view_guru');
+	}
+
+	public function guru_hapus($id){
+		$this->sik->hapus_guru($id);
+		redirect('admin/view_guru');
+	}
+
+	public function guru_edit($id){
+    $data['title'] = "Edit data Guru";
+		$data['op'] = 'edit';
+		$data['sql'] = $this->sik->edit_guru($id);
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_add_data_guru',$data);
+    $this->load->view('layout/footer');
+	}
 }
 ?>

@@ -4,7 +4,7 @@
 								Data Guru
 							</h1>
 							<div style="margin:15px 0px 0px 0px;">
-								<button class="btn btn-primary btn-xs" type="button" name="button">Tambah data</button>
+								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/admin/add_guru">Tambah data</a>
 							</div>
 						</div><!-- /.page-header -->
 
@@ -16,9 +16,6 @@
 										<td>No</td>
 										<td>Nama</td>
 										<td>Alamat</td>
-										<td>Kelurahan</td>
-										<td>Kecamatan</td>
-										<td>Provinsi</td>
 										<td>Jenis Kelamin</td>
 										<td>TTL</td>
 										<td>NIP</td>
@@ -35,18 +32,15 @@
 						        			<tr>
 						        				<td><?php echo $no; ?></td>
 						        				<td><?php echo $obj1->nama_depan . " " . $obj1->nama_tengah . " " . $obj1->nama_belakang; ?></td>
-						        				<td><?php echo $obj1->alamat; ?></td>
-														<td><?php echo $obj1->kelurahan; ?></td>
-														<td><?php echo $obj1->kecamatan; ?></td>
-														<td><?php echo $obj1->provinsi; ?></td>
+						        				<td><?php echo $obj1->alamat."<br>".$obj1->kelurahan." ".$obj1->kecamatan." ".$obj1->kota." ".$obj1->provinsi; ?></td>
 														<td><?php echo $obj1->jenis_kelamin; ?></td>
 														<td><?php echo $obj1->tempat_lahir . ", " .$obj1->tanggal_lahir; ?></td>
 														<td><?php echo $obj1->nip; ?></td>
 														<td><?php echo $obj1->email; ?></td>
 														<td><?php echo $obj1->no_telp; ?></td>
 						        				<td>
-						        					<a href="<?php echo base_url();?>#<?php echo $obj1->id_guru;?>" class="btn btn-info btn-xs"> Edit</a>
-						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>#<?php echo $obj1->id_guru;?>';}" class="btn btn-danger btn-xs"> Hapus </a>
+						        					<a href="<?php echo base_url();?>index.php/admin/guru_edit/<?php echo $obj1->id_guru;?>" class="fa fa-edit"></a>
+						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/guru_hapus/<?php echo $obj1->id_guru;?>';}" class="fa fa-times"></a>
 						        				</td>
 						        			</tr>
 						        		<?php
