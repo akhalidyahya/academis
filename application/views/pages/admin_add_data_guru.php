@@ -1,28 +1,72 @@
+<?php
+  $id_guru = "";
+  $nama_depan = "";
+  $nama_tengah = "";
+	$nama_belakang = "";
+	$alamat = "";
+	$kelurahan = "";
+	$kecamatan = "";
+	$kota = "";
+	$provinsi = "";
+	$jenis_kelamin = "";
+	$tempat_lahir = "";
+	$tanggal_lahir = "";
+	$nip = "";
+	$email = "";
+	$no_telp = "";
+	$id_kelas = "";
+	$id_mapel = "";
+  if ($op=="edit") {
+    foreach ($sql->result() as $obj) {
+      $op = "edit";
+      $id_guru = $obj->id_guru;
+      $nama_depan = $obj->nama_depan;
+      $nama_tengah = $obj->nama_tengah;
+			$nama_belakang = $obj->nama_belakang;
+			$alamat = $obj->alamat;
+			$kelurahan = $obj->kelurahan;
+			$kecamatan = $obj->kecamatan;
+			$kota = $obj->kota;
+			$provinsi = $obj->provinsi;
+			$jenis_kelamin = $obj->jenis_kelamin;
+			$tempat_lahir = $obj->tempat_lahir;
+			$tanggal_lahir = $obj->tanggal_lahir;
+			$nip = $obj->nip;
+			$email = $obj->email;
+			$no_telp = $obj->no_telp;
+			$id_kelas = $obj->id_kelas;
+			$id_mapel = $obj->id_mapel;
+    }
+  }
+?>
+
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/chosen.min.css" />
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-datepicker3.min.css" />
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
 <div class="page-content">
 						<div class="page-header">
 							<h1>
-								Add Data Guru
+
 							</h1>
 						</div><!-- /.page-header -->
 
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<form class="form-horizontal">
+								<form class="form-horizontal" action="<?php echo base_url(); ?>index.php/admin/guru_simpan" method="POST">
+                 <input type="hidden" name="op" value="<?php echo $op;?>" class="form-control">
+                  <input type="hidden" name="id_guru" value="<?php echo $id_guru;?>" class="form-control">
 									<!-- Nama -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Lengkap </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Depan" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Depan" name="nama_depan" value="<?php echo $nama_depan;?>" class="col-xs-12" />
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Tengah" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Tengah" name="nama_tengah" value="<?php echo $nama_tengah;?>" class="col-xs-12" />
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Belakang" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Belakang" name="nama_belakang" value="<?php echo $nama_belakang;?>" class="col-xs-12" />
 										</div>
 									</div>
 
@@ -30,7 +74,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Alamat </label>
 										<div class="col-sm-6">
-											<textarea class="form-control" id="form-field-8" placeholder="Alamat"></textarea>
+											<textarea class="form-control" id="form-field-8" placeholder="Alamat" name="alamat"><?php echo $alamat;?></textarea>
 										</div>
 									</div>
 
@@ -38,37 +82,45 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kelurahan / Kecamatan </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kelurahan" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Kelurahan" class="col-xs-12" name="kelurahan" value="<?php echo $kelurahan;?>"/>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kecamatan" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Kecamatan" class="col-xs-12" name="kecamatan" value="<?php echo $kecamatan;?>"/>
+										</div>
+									</div>
+
+									<!-- Kota -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kota </label>
+										<div class="col-sm-3">
+											<input type="text" id="form-field-1" placeholder="Kota" class="col-xs-12" name="kota" value="<?php echo $kota;?>"/>
 										</div>
 									</div>
 
 									<!-- Propinsi-->
 									<div class="form-group">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Propinsi </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Provinsi </label>
 										<div class="col-sm-3">
-											<select class="form-control" id="form-field-select-1">
+											<select class="form-control" id="form-field-select-1" name="provinsi">
 												<option value=""></option>
-												<option value="AL">Alabama</option>
-												<option value="AK">Alaska</option>
+												<option value="Alabama" <?php if($provinsi == 'Alabama'){ echo 'selected'; } ?>>Alabama</option>
+												<option value="Alaska" <?php if($provinsi == 'Alaska'){ echo 'selected'; } ?>>Alaska</option>
 											</select>
 										</div>
 									</div>
 
 									<!-- Jenis Kelamin -->
-									<div class="form-group control-group">
+                  <div class="form-group control-group">
 										<label class=" col-sm-3 control-label no-padding-right">Jenis Kelamin</label>
 
 										<div class="radio">
 											<label>
-												<input name="form-field-radio" type="radio" class="ace" />
+												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Laki - laki" <?php if($jenis_kelamin == 'Laki - laki'){ echo 'checked'; } ?>/>
 												<span class="lbl"> Laki-laki</span>
 											</label>
 
 											<label>
-												<input name="form-field-radio" type="radio" class="ace" />
+												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Perempuan" <?php if($jenis_kelamin == 'Perempuan'){ echo 'checked'; } ?>/>
 												<span class="lbl"> Perempuan</span>
 											</label>
 										</div>
@@ -78,11 +130,11 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tempat, tanggal lahir </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Tempat" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Tempat" class="col-xs-12" name="tempat_lahir" value="<?php echo $tempat_lahir;?>"/>
 										</div>
 										<div class="col-sm-3">
 											<div class="input-group">
-												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" />
+												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>"/>
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -94,7 +146,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIP </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="NIP" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="NIP" class="col-xs-12" name="nip" value="<?php echo $nip;?>"/>
 										</div>
 									</div>
 
@@ -102,7 +154,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Email" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Email" class="col-xs-12" name="email" value="<?php echo $email;?>"/>
 										</div>
 									</div>
 
@@ -110,7 +162,23 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> No. Telpon </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="No. Telpon" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="No. Telpon" class="col-xs-12" name="no_telp" value="<?php echo $no_telp;?>"/>
+										</div>
+									</div>
+
+									<!-- Kelas -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kelas </label>
+										<div class="col-sm-3">
+											<input type="text" id="form-field-1" placeholder="Kelas" class="col-xs-12" name="id_kelas" value="<?php echo $id_kelas;?>"/>
+										</div>
+									</div>
+
+									<!-- Mata Pelajaran -->
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Mata Pelajaran </label>
+										<div class="col-sm-3">
+											<input type="text" id="form-field-1" placeholder="Mata Pelajaran" class="col-xs-12" name="id_mapel" value="<?php echo $id_mapel;?>"/>
 										</div>
 									</div>
 
@@ -118,7 +186,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right"></label>
 										<div class="col-sm-3">
-											<button type="submit" name="submit" class="btn btn-primary btn-sm">Submit</button>
+											<button type="submit" class="btn btn-primary btn-sm">Submit</button>
 										</div>
 									</div>
 								</form>
