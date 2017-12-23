@@ -60,6 +60,7 @@
 									<!-- Nama -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Lengkap </label>
+										<button>a</button>
 										<div class="col-sm-3">
 											<input type="text" id="form-field-1" placeholder="Nama Depan" name="nama_depan" value="<?php echo $nama_depan;?>" class="col-xs-12" />
 										</div>
