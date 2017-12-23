@@ -135,7 +135,7 @@
 										</div>
 										<div class="col-sm-3">
 											<div class="input-group">
-												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>"/>
+												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>"/>
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
