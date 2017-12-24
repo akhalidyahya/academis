@@ -32,5 +32,15 @@ class Sik extends CI_Model{
 		$this->db->where("id_guru",$id);
 		$this->db->update('guru',$data);
 	}
+
+  function get_kelas(){
+    $sql=$this->db->query("SELECT* FROM kelas");
+    return $sql;
+  }
+
+  function get_mata_pelajaran(){
+    $sql=$this->db->query("SELECT* FROM mata_pelajaran");
+    return $sql;
+  }
 }
  ?>

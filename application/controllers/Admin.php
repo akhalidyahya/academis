@@ -32,6 +32,8 @@ class Admin extends CI_Controller
   function add_guru(){
     $data['title'] = "Tambah data Guru";
     $data['op'] = 'tambah';
+    $data['kelas'] = $this->sik->get_kelas();
+    $data['mata_pelajaran'] = $this->sik->get_mata_pelajaran();
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_add_data_guru',$data);
@@ -102,6 +104,8 @@ class Admin extends CI_Controller
     $data['title'] = "Edit data Guru";
 		$data['op'] = 'edit';
 		$data['sql'] = $this->sik->edit_guru($id);
+    $data['kelas'] = $this->sik->get_kelas();
+    $data['mata_pelajaran'] = $this->sik->get_mata_pelajaran();
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_add_data_guru',$data);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Des 2017 pada 02.36
+-- Generation Time: 24 Des 2017 pada 08.22
 -- Versi Server: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -114,10 +114,11 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_depan`, `nama_tengah`, `nama_belakang`, `alamat`, `kelurahan`, `kecamatan`, `kota`, `provinsi`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `nip`, `email`, `no_telp`, `id_kelas`, `id_mapel`) VALUES
-(8, 'sasa', 'dsd', 'sdsa', 'sdsa', 'dsds', 'sdsa', 'dsadsa', 'dsds', 'L', 'sdsadas', '2017-11-13', '4342', 'dsda', '323', 1, 1),
-(11, 'hgfhgf', 'hgfhf', 'hghf', 'ddsa', 'dsdsa', 'dsada', 'dsada', 'Alaska', 'Laki - laki', 'fdds', '1999-01-14', '4545', 'fds', '45435', 1, 1),
-(12, 'fsadsa', 'dsad', 'sdsa', 'dsdsa', 'dsada', 'sdsa', 'dsadsa', 'Alabama', 'Laki - laki', 'dsad', '1999-01-14', '4343', 'fdsd', '545', 1, 1),
-(13, 'fdfds', 'dfds', 'fdsf', 'dfds', 'fdsf', 'dfds', 'fdsf', 'Alaska', 'Perempuan', 'fdsf', '1999-01-14', '54543', 'fsdfs', '565464', 1, 1);
+(15, 'fdfsd', 'fdsfsd', 'fdsfsd', 'gfhfhgf', 'sada', 'fdf', 'dsas', 'Alaska', 'Perempuan', 'fdfsd', '2017-12-03', '434324', 'harunarrosid07@gmail.com', '98765', 1, 1),
+(17, 'fdfd', 'dsa', 'da', 'dsd', 'dsd', 'dsa', 'sds', 'Alaska', 'Laki - laki', 'csds', '2017-12-03', '321323', 'daadad', '3423421', 1, 1),
+(18, 'widya', 'ayu', 'ningtyas', 'jalan kebon pala 1 tanah rendah', 'kampung melayu', 'jatinegara', 'jakarta timur', 'Alaska', 'Perempuan', 'Tambun', '1998-01-21', '1416010025', 'ningtyaswidyaayu64@gmail.', '081517127260', 1, 1),
+(20, 'dsdsd', 'dsda', 'dsada', 'sdasd', 'dsa', 'sadas', 'dsadsa', 'Alaska', 'Laki - laki', 'dsdas', '2017-12-03', '34234', 'dfds', '7575', 1, 1),
+(21, 'fgfd', 'fgd', 'kjljlj', 'ljkljklu', 'jkhkukh', 'kukkh', 'yjyjyjgy', 'Alaska', 'Perempuan', 'jukuku', '2017-12-01', '6576765', 'kukukygnb', '787979876', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +167,8 @@ CREATE TABLE `mata_pelajaran` (
 --
 
 INSERT INTO `mata_pelajaran` (`id_mapel`, `nama_mapel`) VALUES
-(1, 'Tema 1');
+(1, 'Tema 1'),
+(2, 'Tema 2');
 
 -- --------------------------------------------------------
 
@@ -335,7 +337,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `kalender_akademik`
 --
@@ -350,7 +352,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `orang_tua`
 --

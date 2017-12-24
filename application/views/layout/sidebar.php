@@ -60,7 +60,23 @@
 							<li class="">
 								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
 									<i class="menu-icon fa fa-users"></i>
-									<span class="menu-text"> data siswa </span>
+									<span class="menu-text"> Data Siswa </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="rapot.html">
+									<i class="menu-icon fa fa-book"></i>
+									<span class="menu-text"> Kelas </span>
+								</a>
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="rapot.html">
+									<i class="menu-icon fa fa-book"></i>
+									<span class="menu-text"> Mata Pelajaran </span>
 								</a>
 								<b class="arrow"></b>
 							</li>
@@ -111,7 +127,7 @@
  							<li class="">
  								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
  									<i class="menu-icon fa fa-users"></i>
- 									<span class="menu-text"> data siswa </span>
+ 									<span class="menu-text"> Data Siswa </span>
  								</a>
  								<b class="arrow"></b>
  							</li>
@@ -162,7 +178,7 @@
 							<li class="">
  								<a href="<?php echo base_url(); ?>index.php/admin/view_siswa">
  									<i class="menu-icon fa fa-users"></i>
- 									<span class="menu-text"> data siswa </span>
+ 									<span class="menu-text"> Data Siswa </span>
  								</a>
  								<b class="arrow"></b>
  							</li>

@@ -61,13 +61,13 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nama Lengkap </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Depan" name="nama_depan" value="<?php echo $nama_depan;?>" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Depan" name="nama_depan" value="<?php echo $nama_depan;?>" class="col-xs-12" required/>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Tengah" name="nama_tengah" value="<?php echo $nama_tengah;?>" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Tengah" name="nama_tengah" value="<?php echo $nama_tengah;?>" class="col-xs-12" required/>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Nama Belakang" name="nama_belakang" value="<?php echo $nama_belakang;?>" class="col-xs-12" />
+											<input type="text" id="form-field-1" placeholder="Nama Belakang" name="nama_belakang" value="<?php echo $nama_belakang;?>" class="col-xs-12" required/>
 										</div>
 									</div>
 
@@ -75,7 +75,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Alamat </label>
 										<div class="col-sm-6">
-											<textarea class="form-control" id="form-field-8" placeholder="Alamat" name="alamat"><?php echo $alamat;?></textarea>
+											<textarea class="form-control" id="form-field-8" placeholder="Alamat" name="alamat" required><?php echo $alamat;?></textarea>
 										</div>
 									</div>
 
@@ -83,10 +83,10 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kelurahan / Kecamatan </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kelurahan" class="col-xs-12" name="kelurahan" value="<?php echo $kelurahan;?>"/>
+											<input type="text" id="form-field-1" placeholder="Kelurahan" class="col-xs-12" name="kelurahan" value="<?php echo $kelurahan;?>" required/>
 										</div>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kecamatan" class="col-xs-12" name="kecamatan" value="<?php echo $kecamatan;?>"/>
+											<input type="text" id="form-field-1" placeholder="Kecamatan" class="col-xs-12" name="kecamatan" value="<?php echo $kecamatan;?>" required/>
 										</div>
 									</div>
 
@@ -94,7 +94,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kota </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kota" class="col-xs-12" name="kota" value="<?php echo $kota;?>"/>
+											<input type="text" id="form-field-1" placeholder="Kota" class="col-xs-12" name="kota" value="<?php echo $kota;?>" required/>
 										</div>
 									</div>
 
@@ -102,7 +102,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Provinsi </label>
 										<div class="col-sm-3">
-											<select class="form-control" id="form-field-select-1" name="provinsi">
+											<select class="form-control" id="form-field-select-1" name="provinsi" required>
 												<option value=""></option>
 												<option value="Alabama" <?php if($provinsi == 'Alabama'){ echo 'selected'; } ?>>Alabama</option>
 												<option value="Alaska" <?php if($provinsi == 'Alaska'){ echo 'selected'; } ?>>Alaska</option>
@@ -116,12 +116,12 @@
 
 										<div class="radio">
 											<label>
-												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Laki - laki" <?php if($jenis_kelamin == 'Laki - laki'){ echo 'checked'; } ?>/>
+												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Laki - laki" <?php if($jenis_kelamin == 'Laki - laki'){ echo 'checked'; } ?> required/>
 												<span class="lbl"> Laki-laki</span>
 											</label>
 
 											<label>
-												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Perempuan" <?php if($jenis_kelamin == 'Perempuan'){ echo 'checked'; } ?>/>
+												<input class="form-field-radio ace" type="radio" name="jenis_kelamin" value="Perempuan" <?php if($jenis_kelamin == 'Perempuan'){ echo 'checked'; } ?> required/>
 												<span class="lbl"> Perempuan</span>
 											</label>
 										</div>
@@ -131,11 +131,11 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tempat, tanggal lahir </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Tempat" class="col-xs-12" name="tempat_lahir" value="<?php echo $tempat_lahir;?>"/>
+											<input type="text" id="form-field-1" placeholder="Tempat" class="col-xs-12" name="tempat_lahir" value="<?php echo $tempat_lahir;?>" required/>
 										</div>
 										<div class="col-sm-3">
 											<div class="input-group">
-												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>"/>
+												<input class="form-control date-picker" id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>" required/>
 												<span class="input-group-addon">
 													<i class="fa fa-calendar bigger-110"></i>
 												</span>
@@ -147,7 +147,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> NIP </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="NIP" class="col-xs-12" name="nip" value="<?php echo $nip;?>"/>
+											<input type="text" id="form-field-1" placeholder="NIP" class="col-xs-12" name="nip" value="<?php echo $nip;?>"required/>
 										</div>
 									</div>
 
@@ -155,7 +155,7 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Email" class="col-xs-12" name="email" value="<?php echo $email;?>"/>
+											<input type="text" id="form-field-1" placeholder="Email" class="col-xs-12" name="email" value="<?php echo $email;?>" required/>
 										</div>
 									</div>
 
@@ -163,23 +163,37 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> No. Telpon </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="No. Telpon" class="col-xs-12" name="no_telp" value="<?php echo $no_telp;?>"/>
+											<input type="text" id="form-field-1" placeholder="No. Telpon" class="col-xs-12" name="no_telp" value="<?php echo $no_telp;?>" required/>
 										</div>
 									</div>
 
 									<!-- Kelas -->
-									<div class="form-group">
+                  <div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Kelas </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Kelas" class="col-xs-12" name="id_kelas" value="<?php echo $id_kelas;?>"/>
+											<select class="form-control" id="form-field-select-1" name="id_kelas" required>
+												<option value=""></option>
+                        <?php foreach ($kelas->result() as $row_kelas) {
+                            echo "<option value='".$row_kelas->id_kelas."'>
+                                ".$row_kelas->nama_kelas."
+                            </option>";
+                        } ?>
+											</select>
 										</div>
 									</div>
 
 									<!-- Mata Pelajaran -->
-									<div class="form-group">
+                  <div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Mata Pelajaran </label>
 										<div class="col-sm-3">
-											<input type="text" id="form-field-1" placeholder="Mata Pelajaran" class="col-xs-12" name="id_mapel" value="<?php echo $id_mapel;?>"/>
+											<select class="form-control" id="form-field-select-1" name="id_mapel" required>
+												<option value=""></option>
+                        <?php foreach ($mata_pelajaran->result() as $row_mata_pelajaran) {
+                          echo "<option value='".$row_mata_pelajaran->id_mapel."'>
+                              ".$row_mata_pelajaran->nama_mapel."
+                          </option>";
+                        } ?>
+											</select>
 										</div>
 									</div>
 
