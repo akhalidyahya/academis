@@ -111,5 +111,47 @@ class Admin extends CI_Controller
     $this->load->view('pages/admin_add_data_guru',$data);
     $this->load->view('layout/footer');
 	}
+
+  public function view_kelas(){
+    $data['title'] = "kelas";
+    $data['sql'] = $this->sik->get_kelas();
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_view_kelas',$data);
+    $this->load->view('layout/footer');
+  }
+
+  public function hapus_kelas($id){
+		$this->sik->hapus_kelas($id);
+		redirect('admin/view_kelas');
+	}
+
+  public function simpan_kelas(){
+    $kelas = $this->input->post('kelas');
+    $data['nama_kelas'] = $kelas;
+    $this->sik->simpan_kelas($data);
+    redirect('admin/view_kelas');
+  }
+
+  public function view_mapel(){
+    $data['title'] = "mata pelajaran";
+    $data['sql'] = $this->sik->get_mata_pelajaran();
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_view_mapel',$data);
+    $this->load->view('layout/footer');
+  }
+
+  public function hapus_mapel($id){
+		$this->sik->hapus_mapel($id);
+		redirect('admin/view_mapel');
+	}
+
+  public function simpan_mapel(){
+    $mapel = $this->input->post('mapel');
+    $data['nama_mapel'] = $mapel;
+    $this->sik->simpan_mapel($data);
+    redirect('admin/view_mapel');
+  }
 }
 ?>

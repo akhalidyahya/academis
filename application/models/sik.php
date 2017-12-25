@@ -38,9 +38,28 @@ class Sik extends CI_Model{
     return $sql;
   }
 
+  function hapus_kelas($id){
+		$this->db->where("id_kelas",$id);
+		$this->db->delete('kelas');
+	}
+
+  function simpan_kelas($data){
+    $this->db->insert('kelas',$data);
+  }
+
   function get_mata_pelajaran(){
     $sql=$this->db->query("SELECT* FROM mata_pelajaran");
     return $sql;
   }
+
+  function hapus_mapel($id){
+		$this->db->where("id_mapel",$id);
+		$this->db->delete('mata_pelajaran');
+	}
+
+  function simpan_mapel($data){
+    $this->db->insert('mata_pelajaran',$data);
+  }
+
 }
  ?>
