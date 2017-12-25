@@ -3,7 +3,16 @@
 							<h1>
 								Data Guru
 							</h1>
+
 							<div style="margin:15px 0px 0px 0px;">
+								<div class="nav-search" id="nav-search">
+									<form class="form-search">
+										<span class="input-icon">
+											<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+											<i class="ace-icon fa fa-search nav-search-icon"></i>
+										</span>
+									</form>
+								</div><!-- /.nav-search -->
 								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/admin/add_guru">Tambah data</a>
 								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/pdf_guru" target="blank">Download</a>
 							</div>
@@ -42,6 +51,7 @@
 						        				<td>
 						        					<a href="<?php echo base_url();?>index.php/admin/guru_edit/<?php echo $obj1->id_guru;?>" class="fa fa-edit"></a>
 						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/guru_hapus/<?php echo $obj1->id_guru;?>';}" class="fa fa-times"></a>
+															<a href=""> <i class="fa fa-user"></i> </a>
 						        				</td>
 						        			</tr>
 						        		<?php
