@@ -1,10 +1,11 @@
-<div class="page-content">
+					<div class="page-content">
 						<div class="page-header">
 							<h1>
 								Data Guru
 							</h1>
 							<div style="margin:15px 0px 0px 0px;">
 								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/admin/add_guru">Tambah data</a>
+								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/pdf_guru" target="blank">Download</a>
 							</div>
 						</div><!-- /.page-header -->
 
