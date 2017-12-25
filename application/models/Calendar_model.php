@@ -7,7 +7,7 @@ class Calendar_model extends CI_Model {
 /*Read the data from DB */
 	Public function getEvents()
 	{
-		
+
 	$sql = "SELECT * FROM events WHERE events.start BETWEEN ? AND ? ORDER BY events.start ASC";
 	return $this->db->query($sql, array($_GET['start'], $_GET['end']))->result();
 
@@ -18,8 +18,8 @@ class Calendar_model extends CI_Model {
 	Public function addEvent()
 	{
 
-	$sql = "INSERT INTO events (title,events.start,events.end,description, color) VALUES (?,?,?,?,?)";
-	$this->db->query($sql, array($_POST['title'], $_POST['start'],$_POST['end'], $_POST['description'], $_POST['color']));
+	$sql = "INSERT INTO events (title,events.start,events.end,description, link, color) VALUES (?,?,?,?,?,?)";
+	$this->db->query($sql, array($_POST['title'], $_POST['start'],$_POST['end'], $_POST['description'], $_POST['link'], $_POST['color']));
 		return ($this->db->affected_rows()!=1)?false:true;
 	}
 
@@ -28,8 +28,8 @@ class Calendar_model extends CI_Model {
 	Public function updateEvent()
 	{
 
-	$sql = "UPDATE events SET title = ?, description = ?, color = ? WHERE id = ?";
-	$this->db->query($sql, array($_POST['title'],$_POST['description'], $_POST['color'], $_POST['id']));
+	$sql = "UPDATE events SET title = ?, description = ?, link = ?, color = ? WHERE id = ?";
+	$this->db->query($sql, array($_POST['title'],$_POST['description'], $_POST['link'], $_POST['color'], $_POST['id']));
 		return ($this->db->affected_rows()!=1)?false:true;
 	}
 

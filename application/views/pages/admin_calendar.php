@@ -47,6 +47,12 @@
 				                                    <textarea class="form-control" id="description" name="description"></textarea>
 				                                </div>
 				                            </div>
+																		<div class="form-group">
+				                                <label class="col-md-4 control-label" for="link">Link</label>
+				                                <div class="col-md-4">
+																						<input id="link" name="link" type="text" class="form-control input-md" />
+				                                </div>
+				                            </div>
 				                            <div class="form-group">
 																			<label class="col-md-4 control-label" for="color">Color</label>
 																			<div class="col-md-4">

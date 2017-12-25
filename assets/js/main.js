@@ -137,6 +137,7 @@ $(function(){
         // Set input values
         $('#title').val(data.event ? data.event.title : '');
         $('#description').val(data.event ? data.event.description : '');
+        $('#link').val(data.event ? data.event.link : '');
         $('#color').val(data.event ? data.event.color : '#3a87ad');
         // Create Butttons
         $.each(data.buttons, function(index, button){
@@ -152,6 +153,7 @@ $(function(){
             $.post(base_url+'calendar/addEvent', {
                 title: $('#title').val(),
                 description: $('#description').val(),
+                link: $('#link').val(),
                 color: $('#color').val(),
                 start: $('#start').val(),
                 end: $('#end').val()
@@ -172,6 +174,7 @@ $(function(){
                 id: currentEvent._id,
                 title: $('#title').val(),
                 description: $('#description').val(),
+                link: $('#link').val(),
                 color: $('#color').val()
             }, function(result){
                 $('.alert').addClass('alert-success').text('Event updated successfuly');
