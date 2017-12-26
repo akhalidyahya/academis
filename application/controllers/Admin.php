@@ -29,6 +29,15 @@ class Admin extends CI_Controller
     $this->load->view('layout/footer');
   }
 
+  function view_siswa(){
+    $data['title'] = "Data Guru";
+    $data2['sql1']=$this->sik->get_siswa();
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_view_data_siswa',$data2);
+    $this->load->view('layout/footer');
+  }
+
   function add_guru(){
     $data['title'] = "Tambah data Guru";
     $data['op'] = 'tambah';
@@ -37,6 +46,17 @@ class Admin extends CI_Controller
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_add_data_guru',$data);
+    $this->load->view('layout/footer');
+  }
+
+  function add_siswa(){
+    $data['title'] = "Tambah data Siswa";
+    $data['op'] = 'tambah';
+    $data['kelas'] = $this->sik->get_kelas();
+    $data['ortu'] = $this->sik->get_ortu();
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_add_data_siswa',$data);
     $this->load->view('layout/footer');
   }
 
@@ -95,9 +115,60 @@ class Admin extends CI_Controller
 		redirect('admin/view_guru');
 	}
 
+  public function siswa_simpan()
+	{
+		$op = $this->input->post('op');
+		$id_siswa = $this->input->post('id_siswa');
+		$nama_depan = $this->input->post('nama_depan');
+		$nama_tengah = $this->input->post('nama_tengah');
+    $nama_belakang = $this->input->post('nama_belakang');
+    $alamat = $this->input->post('alamat');
+    $kelurahan = $this->input->post('kelurahan');
+    $kecamatan = $this->input->post('kecamatan');
+    $kota = $this->input->post('kota');
+    $provinsi = $this->input->post('provinsi');
+    $jenis_kelamin = $this->input->post('jenis_kelamin');
+    $tempat_lahir = $this->input->post('tempat_lahir');
+    $tanggal_lahir = $this->input->post('tanggal_lahir');
+    $nis = $this->input->post('nis');
+    $nisn = $this->input->post('nisn');
+    $agama = $this->input->post('agama');
+    $id_kelas = $this->input->post('id_kelas');
+    $id_ortu = $this->input->post('id_ortu');
+		$data = array(
+			'nama_depan' => $nama_depan,
+			'nama_tengah' => $nama_tengah,
+      'nama_belakang' => $nama_belakang,
+      'alamat' => $alamat,
+      'kelurahan' => $kelurahan,
+      'kecamatan' => $kecamatan,
+      'kota' => $kota,
+      'provinsi' => $provinsi,
+      'jenis_kelamin' => $jenis_kelamin,
+      'tempat_lahir' => $tempat_lahir,
+      'tanggal_lahir' => $tanggal_lahir,
+      'nis' => $nis,
+      'nisn' => $nisn,
+      'agama' => $agama,
+      'id_kelas' => $id_kelas,
+      'id_ortu' => $id_ortu
+			);
+		if ($op=="tambah") {
+			$this->sik->simpan_siswa($data);
+		}else{
+			$this->sik->update_siswa($id_siswa,$data);
+		}
+		redirect('admin/view_siswa');
+	}
+
 	public function guru_hapus($id){
 		$this->sik->hapus_guru($id);
 		redirect('admin/view_guru');
+	}
+
+  public function siswa_hapus($id){
+		$this->sik->hapus_siswa($id);
+		redirect('admin/view_siswa');
 	}
 
 	public function guru_edit($id){
@@ -109,6 +180,18 @@ class Admin extends CI_Controller
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_add_data_guru',$data);
+    $this->load->view('layout/footer');
+	}
+
+  public function siswa_edit($id){
+    $data['title'] = "Edit data Siswa";
+		$data['op'] = 'edit';
+		$data['sql'] = $this->sik->edit_siswa($id);
+    $data['kelas'] = $this->sik->get_kelas();
+    $data['ortu'] = $this->sik->get_ortu();
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_add_data_siswa',$data);
     $this->load->view('layout/footer');
 	}
 
