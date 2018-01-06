@@ -6,10 +6,11 @@
 
 							<div style="margin:15px 0px 0px 0px;">
 								<div class="nav-search" id="nav-search">
-									<form class="form-search">
+									<form class="form-search" action="<?php echo site_url('admin/view_guru');?>" method = "post">
 										<span class="input-icon">
-											<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
+											<input type="text" name="keyword" placeholder="Search ..." class="nav-search-input" id="nav-search-input" />
+											<input type="submit" value = "Search" class="btn btn-primary btn-xs"/>
 										</span>
 									</form>
 								</div><!-- /.nav-search -->
@@ -36,7 +37,7 @@
 									<tbody>
 										<?php
 						        	$no=0;
-						        	foreach ($sql1->result() as $obj1) {
+						        	foreach ($sql1 as $obj1) {
 						        		$no++;
 						        		?>
 						        			<tr>

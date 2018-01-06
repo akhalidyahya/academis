@@ -5,7 +5,7 @@ class Sik extends CI_Model{
 
   public function get_guru(){
     $sql=$this->db->query("SELECT* FROM guru");
-    return $sql;
+    return $sql->result();
   }
 
   public function get_siswa(){
@@ -101,6 +101,26 @@ class Sik extends CI_Model{
     $Q->free_result();
     return $data;
   }
+
+  function search_guru($keyword)
+    {
+        $this->db->like('nip',$keyword);
+        $this->db->or_like('nama_depan',$keyword);
+        $this->db->or_like('nama_tengah',$keyword);
+        $this->db->or_like('nama_belakang',$keyword);
+        $this->db->or_like('alamat',$keyword);
+        $this->db->or_like('kelurahan',$keyword);
+        $this->db->or_like('kecamatan',$keyword);
+        $this->db->or_like('kota',$keyword);
+        $this->db->or_like('provinsi',$keyword);
+        $this->db->or_like('jenis_kelamin',$keyword);
+        $this->db->or_like('tempat_lahir',$keyword);
+        $this->db->or_like('tanggal_lahir',$keyword);
+        $this->db->or_like('email',$keyword);
+        $this->db->or_like('no_telp',$keyword);  
+        $query=$this->db->get('guru');
+        return $query->result();
+    }
 
 }
  ?>
