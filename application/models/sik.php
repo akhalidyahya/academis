@@ -10,7 +10,7 @@ class Sik extends CI_Model{
 
   public function get_siswa(){
     $sql=$this->db->query("SELECT* FROM siswa");
-    return $sql;
+    return $sql->result();
   }
 
   function proseslogin($user,$pass){
@@ -102,6 +102,18 @@ class Sik extends CI_Model{
     return $data;
   }
 
+  public function detail_Siswa($id_siswa)
+  {
+    $data=array();
+    $options = array('id_siswa' => $id_siswa);
+    $Q=$this->db->get_where('siswa',$options,1);
+    if ($Q->num_rows()>0) {
+      $data = $Q->row_array();
+    }
+    $Q->free_result();
+    return $data;
+  }
+
   function search_guru($keyword)
     {
         $this->db->like('nip',$keyword);
@@ -117,10 +129,30 @@ class Sik extends CI_Model{
         $this->db->or_like('tempat_lahir',$keyword);
         $this->db->or_like('tanggal_lahir',$keyword);
         $this->db->or_like('email',$keyword);
-        $this->db->or_like('no_telp',$keyword);  
+        $this->db->or_like('no_telp',$keyword);
         $query=$this->db->get('guru');
         return $query->result();
     }
+
+    function search_siswa($keyword)
+      {
+          $this->db->like('nis',$keyword);
+          $this->db->or_like('nama_depan',$keyword);
+          $this->db->or_like('nama_tengah',$keyword);
+          $this->db->or_like('nama_belakang',$keyword);
+          $this->db->or_like('alamat',$keyword);
+          $this->db->or_like('kelurahan',$keyword);
+          $this->db->or_like('kecamatan',$keyword);
+          $this->db->or_like('kota',$keyword);
+          $this->db->or_like('provinsi',$keyword);
+          $this->db->or_like('jenis_kelamin',$keyword);
+          $this->db->or_like('tempat_lahir',$keyword);
+          $this->db->or_like('tanggal_lahir',$keyword);
+          $this->db->or_like('nisn',$keyword);
+          $this->db->or_like('agama',$keyword);
+          $query=$this->db->get('siswa');
+          return $query->result();
+      }
 
 }
  ?>

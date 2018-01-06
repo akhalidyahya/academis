@@ -33,7 +33,9 @@ class Admin extends CI_Controller
 
   function view_siswa(){
     $data['title'] = "Data Guru";
+    $keyword=$this->input->post('keyword');
     $data['sql1']=$this->sik->get_siswa();
+    $data['sql1']=$this->sik->search_siswa($keyword);
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_view_data_siswa',$data);
@@ -248,5 +250,16 @@ class Admin extends CI_Controller
     $this->load->view('pages/admin_data_lengkap',$data);
     $this->load->view('layout/footer');
   }
+
+  public function siswa_data_lengkap()
+  {
+    $data['title'] = "Data Lengkap Siswa";
+    $data['sql']=$this->sik->detail_Siswa($this->uri->segment(3));
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_data_lengkap_siswa',$data);
+    $this->load->view('layout/footer');
+  }
+
 }
 ?>

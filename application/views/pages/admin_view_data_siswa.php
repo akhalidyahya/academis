@@ -5,10 +5,11 @@
 							</h1>
 							<div style="margin:15px 0px 0px 0px;">
 								<div class="nav-search" id="nav-search">
-									<form class="form-search">
+									<form class="form-search" action="<?php echo site_url('admin/view_siswa');?>" method = "post">
 										<span class="input-icon">
-											<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
+											<input type="text" name="keyword" placeholder="Search ..." class="nav-search-input" id="nav-search-input" />
+											<input type="submit" value = "Search" class="btn btn-primary btn-xs"/>
 										</span>
 									</form>
 								</div><!-- /.nav-search -->
@@ -29,13 +30,13 @@
 										<td>TTL</td>
 										<td>NIS</td>
 										<td>NISN</td>
-                                        <td>Agama</td>
+                    <td>Agama</td>
 										<td>Aksi</td>
 									</thead>
 									<tbody>
 										<?php
 						        	$no=0;
-						        	foreach ($sql1->result() as $obj1) {
+						        	foreach ($sql1 as $obj1) {
 						        		$no++;
 						        		?>
 						        			<tr>
@@ -47,9 +48,10 @@
 														<td><?php echo $obj1->nis; ?></td>
                                                         <td><?php echo $obj1->nisn; ?></td>
 														<td><?php echo $obj1->agama; ?></td>
-						        				<td>    
-						        					<a href="<?php echo base_url();?>index.php/admin/siswa_edit/<?php echo $obj1->id_siswa;?>" class="fa fa-edit"></a>
-						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/siswa_hapus/<?php echo $obj1->id_siswa;?>';}" class="fa fa-times"></a>
+						        				<td>
+															<a href="<?php echo base_url();?>index.php/admin/siswa_edit/<?php echo $obj1->id_siswa;?>"><i class="fa fa-edit" title="Ubah Data"></i></a>
+						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/siswa_hapus/<?php echo $obj1->id_siswa;?>';}"><i class="fa fa-times" title="Hapus Data"></i></a>
+															<a href="<?php echo base_url();?>index.php/admin/siswa_data_lengkap/<?php echo $obj1->id_siswa;?>"><i class="fa fa-user" title="Data Lengkap"></i> </a>
 						        				</td>
 						        			</tr>
 						        		<?php

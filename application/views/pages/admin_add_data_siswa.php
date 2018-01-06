@@ -186,7 +186,7 @@
                   <div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Orang tua </label>
 										<div class="col-sm-3">
-											<select class="form-control" id="form-field-select-1" name="id_ortu" required>
+											<select class="form-control" id="form-field-select-1" name="id_ortu">
 												<option value=""></option>
                         <?php foreach ($ortu->result() as $row_ortu) {
                           echo "<option value='".$row_ortu->id_ortu."'>
