@@ -22,19 +22,19 @@ class Admin extends CI_Controller
 
   function view_guru(){
     $data['title'] = "Data Guru";
-    $data2['sql1']=$this->sik->get_guru();
+    $data['sql1']=$this->sik->get_guru();
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
-    $this->load->view('pages/admin_view_data_guru',$data2);
+    $this->load->view('pages/admin_view_data_guru',$data);
     $this->load->view('layout/footer');
   }
 
   function view_siswa(){
     $data['title'] = "Data Guru";
-    $data2['sql1']=$this->sik->get_siswa();
+    $data['sql1']=$this->sik->get_siswa();
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
-    $this->load->view('pages/admin_view_data_siswa',$data2);
+    $this->load->view('pages/admin_view_data_siswa',$data);
     $this->load->view('layout/footer');
   }
 
@@ -235,6 +235,16 @@ class Admin extends CI_Controller
     $data['nama_mapel'] = $mapel;
     $this->sik->simpan_mapel($data);
     redirect('admin/view_mapel');
+  }
+
+  public function guru_data_lengkap()
+  {
+    $data['title'] = "Data Lengkap Guru";
+    $data['sql']=$this->sik->detail_Guru($this->uri->segment(3));
+    $this->load->view('layout/header');
+    $this->load->view('layout/sidebar',$data);
+    $this->load->view('pages/admin_data_lengkap',$data);
+    $this->load->view('layout/footer');
   }
 }
 ?>

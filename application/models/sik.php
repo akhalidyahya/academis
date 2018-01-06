@@ -90,5 +90,17 @@ class Sik extends CI_Model{
     return $sql;
   }
 
+  public function detail_Guru($id_guru)
+  {
+    $data=array();
+    $options = array('id_guru' => $id_guru );
+    $Q=$this->db->get_where('guru',$options,1);
+    if ($Q->num_rows()>0) {
+      $data = $Q->row_array();
+    }
+    $Q->free_result();
+    return $data;
+  }
+
 }
  ?>

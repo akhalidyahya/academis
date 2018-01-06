@@ -49,9 +49,9 @@
 														<td><?php echo $obj1->email; ?></td>
 														<td><?php echo $obj1->no_telp; ?></td>
 						        				<td>
-						        					<a href="<?php echo base_url();?>index.php/admin/guru_edit/<?php echo $obj1->id_guru;?>" class="fa fa-edit"></a>
-						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/guru_hapus/<?php echo $obj1->id_guru;?>';}" class="fa fa-times"></a>
-															<a href=""> <i class="fa fa-user"></i> </a>
+						        					<a href="<?php echo base_url();?>index.php/admin/guru_edit/<?php echo $obj1->id_guru;?>"><i class="fa fa-edit" title="Ubah Data"></i></a>
+						        					<a href="javascript:if(confirm('Apakah Anda yakin ingin menghapus ?')){document.location='<?php echo base_url();?>index.php/admin/guru_hapus/<?php echo $obj1->id_guru;?>';}"><i class="fa fa-times" title="Hapus Data"></i></a>
+															<a href="<?php echo base_url();?>index.php/admin/guru_data_lengkap/<?php echo $obj1->id_guru;?>"><i class="fa fa-user" title="Data Lengkap"></i> </a>
 						        				</td>
 						        			</tr>
 						        		<?php

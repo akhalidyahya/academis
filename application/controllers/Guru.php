@@ -11,8 +11,9 @@ class Guru extends CI_Controller
   }
 
   function index(){
+    $data['title'] = "Dashboard";
 		$this->load->view('layout/header');
-    $this->load->view('layout/sidebar');
+    $this->load->view('layout/sidebar',$data);
     $this->load->view('layout/footer');
 	}
 }
