@@ -10,7 +10,6 @@
 										<span class="input-icon">
 											<i class="ace-icon fa fa-search nav-search-icon"></i>
 											<input type="text" name="keyword" placeholder="Search ..." class="nav-search-input" id="nav-search-input" />
-											<input type="submit" value = "Search" class="btn btn-primary btn-xs"/>
 										</span>
 									</form>
 								</div><!-- /.nav-search -->
