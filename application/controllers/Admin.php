@@ -22,9 +22,7 @@ class Admin extends CI_Controller
 
   function view_guru(){
     $data['title'] = "Data Guru";
-    $keyword=$this->input->post('keyword');
     $data['sql1']=$this->sik->get_guru();
-    $data['sql1']=$this->sik->search_guru($keyword);
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_view_data_guru',$data);
@@ -33,9 +31,7 @@ class Admin extends CI_Controller
 
   function view_siswa(){
     $data['title'] = "Data Guru";
-    $keyword=$this->input->post('keyword');
     $data['sql1']=$this->sik->get_siswa();
-    $data['sql1']=$this->sik->search_siswa($keyword);
     $this->load->view('layout/header');
     $this->load->view('layout/sidebar',$data);
     $this->load->view('pages/admin_view_data_siswa',$data);

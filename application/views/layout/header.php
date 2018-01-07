@@ -31,6 +31,7 @@
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/jquery.dataTables.min.css">
 
 
 	</head>

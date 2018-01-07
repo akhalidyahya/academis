@@ -67,6 +67,9 @@ if('ontouchstart' in document.documentElement) document.write("<script src='<?ph
 <script src="<?php echo base_url(); ?>assets/js/ace-elements.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/ace.min.js"></script>
 
+<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/moment.js"></script>
+
 <script src='<?php echo base_url();?>assets/js/main.js'></script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
@@ -256,6 +259,10 @@ jQuery(function($) {
       $(this).addClass('dropup');
     else $(this).removeClass('dropup');
   });
+
+  $(document).ready(function(){
+		$('#mydata').DataTable();
+	});
 
 })
 </script>

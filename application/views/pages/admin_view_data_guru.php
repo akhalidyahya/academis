@@ -1,3 +1,4 @@
+<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet">
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
@@ -5,14 +6,6 @@
 							</h1>
 
 							<div style="margin:15px 0px 0px 0px;">
-								<div class="nav-search" id="nav-search">
-									<form class="form-search" action="<?php echo site_url('admin/view_guru');?>" method = "post">
-										<span class="input-icon">
-											<i class="ace-icon fa fa-search nav-search-icon"></i>
-											<input type="text" name="keyword" placeholder="Search ..." class="nav-search-input" id="nav-search-input" />
-										</span>
-									</form>
-								</div><!-- /.nav-search -->
 								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/admin/add_guru">Tambah data</a>
 								<a class="btn btn-primary btn-xs" type="button" name="button" href="<?php echo base_url();?>index.php/pdf_guru" target="blank">Download</a>
 							</div>
@@ -21,7 +14,7 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
-								<table class="table">
+								<table class="table table-bordered table-hover table-striped" id="mydata">
 									<thead>
 										<td>No</td>
 										<td>Nama</td>
@@ -66,3 +59,12 @@
 				</div><!-- /.page-content -->
 			</div>
 		</div><!-- /.main-content -->
+
+<script src="<?php echo base_url(); ?>assets/js/jquery-2.1.4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/moment.js"></script>
+<script>
+$(document).ready(function(){
+	$('#mydata').DataTable();
+});
+</script>
