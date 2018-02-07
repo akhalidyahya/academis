@@ -135,7 +135,21 @@ class Admin extends CI_Controller
     $agama = $this->input->post('agama');
     $id_kelas = $this->input->post('id_kelas');
     $id_ortu = $this->input->post('id_ortu');
-		$data = array(
+    $nama_ayah = $this->input->post('nama_ayah');
+    $nama_ibu = $this->input->post('nama_ibu');
+    $nama_wali = $this->input->post('nama_wali');
+    $no_telp_bapak = $this->input->post('no_telp_bapak');
+    $no_telp_ibu = $this->input->post('no_telp_ibu');
+    $no_telp_wali = $this->input->post('no_telp_wali');
+    $alamat_lengkap = $this->input->post('alamat_lengkap');
+    $pekerjaan_bapak = $this->input->post('pekerjaan_bapak');
+    $pekerjaan_ibu = $this->input->post('pekerjaan_ibu');
+    $pekerjaan_wali = $this->input->post('pekerjaan_wali');
+    $penghasilan_ortu = $this->input->post('penghasilan_ortu');
+    $penghasilan_wali = $this->input->post('penghasilan_wali');
+    $no_kk = $this->input->post('no_kk');
+    $email_aktif = $this->input->post('email_aktif');
+		$data1 = array(
 			'nama_depan' => $nama_depan,
 			'nama_tengah' => $nama_tengah,
       'nama_belakang' => $nama_belakang,
@@ -152,11 +166,31 @@ class Admin extends CI_Controller
       'agama' => $agama,
       'id_kelas' => $id_kelas,
       'id_ortu' => $id_ortu
-			);
+      );
+    $data2 = array(
+      'nama_bapak' => $nama_ayah,
+      'nama_ibu' => $nama_ibu,
+      'nama_wali' => $nama_wali,
+      'no_telp_bapak' => $no_telp_bapak,
+      'no_telp_ibu' => $no_telp_ibu,
+      'no_telp_wali' => $no_telp_wali,
+      'alamat_lengkap' => $alamat_lengkap,
+      'pekerjaan_ayah' => $pekerjaan_bapak,
+      'pekerjaan_ibu' => $pekerjaan_ibu,
+      'pekerjaan_wali' => $pekerjaan_wali,
+      'penghasilan_ortu' => $penghasilan_ortu,
+      'penghasilan_wali' => $penghasilan_wali,
+      'no_kk' => $no_kk,
+      'email_aktif' => $email_aktif
+    );
 		if ($op=="tambah") {
-			$this->sik->simpan_siswa($data);
+			$this->sik->simpan_ortu($data2);
+      $idOrtu = $this->sik->get_last_id();
+      $data1['id_ortu'] = $idOrtu;
+			$this->sik->simpan_siswa($data1);
 		}else{
-			$this->sik->update_siswa($id_siswa,$data);
+			$this->sik->update_ortu($id_ortu,$data2);
+			$this->sik->update_siswa($id_siswa,$data1);
 		}
 		redirect('admin/view_siswa');
 	}

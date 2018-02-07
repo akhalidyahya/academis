@@ -50,8 +50,13 @@ class Sik extends CI_Model{
 
   function update_siswa($id,$data){
 		$this->db->where("id_siswa",$id);
-		$this->db->update('siswa',$data);
-	}
+    $this->db->update('siswa',$data);
+  }
+  
+  function update_ortu($id,$data){
+		$this->db->where("id_ortu",$id);
+    $this->db->update('orang_tua',$data);
+  }
 
   function get_kelas(){
     $sql=$this->db->query("SELECT* FROM kelas");
@@ -83,6 +88,15 @@ class Sik extends CI_Model{
 
   function simpan_siswa($data){
     $this->db->insert('siswa',$data);
+  }
+
+  function simpan_ortu($data){
+    $this->db->insert('orang_tua',$data);
+  }
+
+  function get_last_id(){
+    $insert_id = $this->db->insert_id();
+    return $insert_id;
   }
 
   function get_ortu(){

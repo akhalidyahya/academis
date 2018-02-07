@@ -22,7 +22,7 @@
 										<td>TTL</td>
 										<td>NIS</td>
 										<td>NISN</td>
-                    <td>Agama</td>
+                    					<td>Agama</td>
 										<td>Aksi</td>
 									</thead>
 									<tbody>
